@@ -1,0 +1,56 @@
+{% extends "student/base.html" %}
+{% load static %}
+{% block title %}Home{% endblock title %} 
+{% block content %}
+<h1 class="text-center">ALL STUDENTS</h1> 
+
+
+    <div class="row">
+        <div class="col-12">
+                <div class="card bg-light mb-3 ms-4 me-4" >
+                <div class="card-header"><i class="fa-solid fa-clipboard-user"></i> All student record</div>
+                <div class="card-body">
+                  
+                
+                
+        <table class="table table-hover">
+            <thead >
+              <tr>
+                <th scope="col">First Name</th>
+                <th scope="col">Last Name</th>
+                <th scope="col">Course</th>
+                <th scope="col">Email</th>
+                <th scope="col">Phone number</th>
+                <th scope="col">State of origin</th>
+                <th scope="col">Date of birth</th>
+                <th scope="col">Registration date</th>
+                <th scope="col">starting date</th>
+                <th scope="col">Ending date</th>
+                <th scope="col">Address</th>
+              </tr>
+            </thead>
+            <tbody>
+              {% for post in posts %}
+              <tr>
+                <td>{{post.FirstName}}</td>
+                <td>{{post.LastName}}</td>
+                <td>{{post.Course}}</td>
+                <td>{{post.Email}}</td>
+                <td>{{post.Phone_number}}</td>
+                <td>{{post.State_of_origin}}</td>
+                <td>{{post.Date_of_birth}}</td>
+                <td>{{post.Registration_date}}</td>
+                <td>{{post.Starting_date}}</td>
+                <td>{{post.Ending_date}}</td>
+                <td>{{post.Address}}</td>
+                
+                  {% endfor %}
+        </tr>
+            </tbody>
+        </table>
+        </div>
+        </div>
+        </div>
+    </div>
+
+{% endblock content %}

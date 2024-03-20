@@ -1,0 +1,30 @@
+{% extends "student/base.html" %}
+{% load static %}
+{% block title %}Update{% endblock title %}
+{% block content %}
+<h1 class="text-center">UPDATE YOUR INFORMATION</h1> 
+{% if success %}
+<div class="alert alert-success">
+    Update has been done successfully.
+    <a href="{% url "home" %}" class="alert-link ">Go to home page</a>
+</div>
+{% else %} 
+<div class="row justify-content-center">
+    <div class="col-6">
+        <div class="card bg-secondary mb-3">
+            <div class="card-header">Update Info</div>
+            <div class="card-body">
+                <form action="" method="post"> 
+                    {% csrf_token %}
+                    {{ form.as_p }}
+                    <button type="submit" class="btn btn-info">Update</button>  
+                    <a href="{% url 'home' %}" class="btn btn-danger">Cancel</a>
+                </form>
+            </div>
+          </div>
+    </div>
+</div>
+{% endif %}
+
+
+{% endblock content %}
